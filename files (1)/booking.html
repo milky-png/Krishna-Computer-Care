@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - KCC Krishnan Computer Care</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .booking-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .booking-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .booking-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .booking-form {
+            padding: 40px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .whatsapp-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #ffd700;
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .price-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back to Home
+    </a>
+    
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1><i class="bi bi-calendar-check"></i> Book Your Service</h1>
+            <p>Fill in the details below and we'll confirm your appointment via WhatsApp</p>
+        </div>
+        
+        <div class="booking-form">
+            <div id="successMessage" class="success-message">
+                <i class="bi bi-check-circle" style="font-size: 48px; color: #28a745;"></i>
+                <h4>Booking Request Sent!</h4>
+                <p>Your service request has been sent via WhatsApp. We'll confirm your appointment shortly.</p>
+            </div>
+            
+            <form id="bookingForm">
+                <!-- Personal Information -->
+                <h3 class="section-title"><i class="bi bi-person-circle"></i> Personal Information</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" class="form-control" id="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Email Address <span class="required">*</span></label>
+                    <input type="email" class="form-control" id="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="2" placeholder="Your address (for pickup/delivery)"></textarea>
+                </div>
+                
+                <!-- Service Details -->
+                <h3 class="section-title"><i class="bi bi-gear-fill"></i> Service Details</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Service Category <span class="required">*</span></label>
+                        <select class="form-select" id="category" required>
+                            <option value="">Select Service Category</option>
+                            <option value="Laptop Services">💻 Laptop Services</option>
+                            <option value="PC Cleaning">🖥️ PC Cleaning</option>
+                            <option value="Printer Services">🖨️ Printer Services</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Specific Service <span class="required">*</span></label>
+                        <select class="form-select" id="service" required disabled>
+                            <option value="">First select category</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Device Brand/Model</label>
+                    <input type="text" class="form-control" id="deviceModel" placeholder="e.g., Dell Inspiron 15, HP LaserJet 1020">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Issue Description <span class="required">*</span></label>
+                    <textarea class="form-control" id="issue" rows="4" required placeholder="Describe the problem you're experiencing..."></textarea>
+                </div>
+                
+                <!-- Appointment Details -->
+                <h3 class="section-title"><i class="bi bi-calendar3"></i> Preferred Appointment</h3>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Preferred Date <span class="required">*</span></label>
+                        <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Preferred Time <span class="required">*</span></label>
+                        <select class="form-select" id="time" required>
+                            <option value="">Select Time</option>
+                            <option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>
+                            <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                            <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+                            <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
+                            <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                            <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+                            <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
+                            <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>
+                            <option value="7:00 PM - 8:00 PM">7:00 PM - 8:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Service Location</label>
+                    <select class="form-select" id="location">
+                        <option value="Drop at Service Center">Drop at Service Center</option>
+                        <option value="Pickup from Address">Pickup from My Address</option>
+                        <option value="On-site Service">On-site Service Required</option>
+                    </select>
+                </div>
+                
+                <div class="price-info">
+                    <i class="bi bi-info-circle"></i> <strong>Note:</strong> Final pricing will be confirmed after diagnosis. 
+                    Free pickup/delivery for repairs above ₹2,000. View our <a href="index.html#pricing" target="_blank">pricing page</a> for reference.
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="bi bi-whatsapp whatsapp-icon"></i> Send Booking Request via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Service options based on category
+        const serviceOptions = {
+            'Laptop Services': [
+                'Laptop Screen Replacement',
+                'Keyboard Replacement',
+                'Battery Replacement',
+                'Motherboard Repair',
+                'RAM Upgrade',
+                'SSD Installation',
+                'Hard Drive Replacement',
+                'Laptop Hinge Repair',
+                'Touchpad Replacement',
+                'General Diagnostics',
+                'Other Laptop Issue'
+            ],
+            'PC Cleaning': [
+                'Basic PC Cleaning (External)',
+                'Deep Internal Cleaning',
+                'CPU Fan Cleaning',
+                'Thermal Paste Replacement',
+                'Motherboard Cleaning',
+                'Power Supply Cleaning',
+                'Graphics Card Cleaning',
+                'Complete PC Servicing',
+                'Dust Removal & Optimization',
+                'Cable Management'
+            ],
+            'Printer Services': [
+                'Printer Diagnostics',
+                'Cartridge Replacement',
+                'Paper Jam Fix',
+                'Print Head Cleaning',
+                'Printer Roller Replacement',
+                'Connectivity Issues',
+                'Printer Driver Installation',
+                'Scanner Repair',
+                'Printer Cleaning & Servicing',
+                'Network Printer Setup',
+                'Other Printer Issue'
+            ]
+        };
+
+        // Update service dropdown based on category selection
+        document.getElementById('category').addEventListener('change', function() {
+            const category = this.value;
+            const serviceSelect = document.getElementById('service');
+            
+            serviceSelect.innerHTML = '<option value="">Select Service</option>';
+            
+            if (category && serviceOptions[category]) {
+                serviceSelect.disabled = false;
+                serviceOptions[category].forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service;
+                    option.textContent = service;
+                    serviceSelect.appendChild(option);
+                });
+            } else {
+                serviceSelect.disabled = true;
+            }
+        });
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const category = document.getElementById('category').value;
+            const service = document.getElementById('service').value;
+            const deviceModel = document.getElementById('deviceModel').value;
+            const issue = document.getElementById('issue').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const location = document.getElementById('location').value;
+            
+            // Create WhatsApp message
+            let message = `🔧 *NEW SERVICE BOOKING - KCC*\n\n`;
+            message += `👤 *CUSTOMER DETAILS*\n`;
+            message += `Name: ${name}\n`;
+            message += `Phone: ${phone}\n`;
+            message += `Email: ${email}\n`;
+            if (address) message += `Address: ${address}\n`;
+            message += `\n🛠️ *SERVICE DETAILS*\n`;
+            message += `Category: ${category}\n`;
+            message += `Service: ${service}\n`;
+            if (deviceModel) message += `Device: ${deviceModel}\n`;
+            message += `\n📝 *ISSUE DESCRIPTION*\n`;
+            message += `${issue}\n`;
+            message += `\n📅 *APPOINTMENT*\n`;
+            message += `Date: ${date}\n`;
+            message += `Time: ${time}\n`;
+            message += `Location: ${location}\n`;
+            message += `\n---\n`;
+            message += `*Krishnan Computer Care*\n`;
+            message += `Professional Laptop, PC & Printer Services`;
+            
+            // WhatsApp number
+            const whatsappNumber = '916374258136';
+            
+            // Encode message
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                document.getElementById('bookingForm').reset();
+                document.getElementById('service').disabled = true;
+                document.getElementById('successMessage').classList.remove('show');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
