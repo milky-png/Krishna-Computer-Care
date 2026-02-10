@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>KCC - Krishnan Computer Care</title>
+        <meta name="description" content="Professional laptop repair, PC cleaning, and printer services with affordable pricing" />
+        <meta name="keywords" content="laptop repair, PC cleaning, printer services, computer services" />
+
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon" />
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet" />
+        
+        <style>
+            /* Pricing Table Styles */
+            .pricing-card {
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+                margin-bottom: 30px;
+                transition: transform 0.3s ease;
+            }
+            
+            .pricing-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            }
+            
+            .pricing-card h3 {
+                color: #2c3e50;
+                font-size: 24px;
+                margin-bottom: 20px;
+                font-weight: 700;
+            }
+            
+            .pricing-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 0;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .pricing-item:last-child {
+                border-bottom: none;
+            }
+            
+            .service-name {
+                font-weight: 500;
+                color: #555;
+                flex: 1;
+            }
+            
+            .service-price {
+                font-weight: 700;
+                color: #3498db;
+                font-size: 18px;
+            }
+            
+            .category-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 8px 20px;
+                border-radius: 25px;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            
+            .book-btn {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 12px 30px;
+                border-radius: 25px;
+                border: none;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-decoration: none;
+            }
+            
+            .book-btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+                color: white;
+            }
+            
+            .pricing-section {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            
+            /* WhatsApp Float Button */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            
+            .whatsapp-float:hover {
+                background-color: #128C7E;
+                transform: scale(1.1);
+            }
+            
+            .price-note {
+                background: #fff3cd;
+                border-left: 4px solid #ffc107;
+                padding: 15px;
+                margin-top: 20px;
+                border-radius: 5px;
+            }
+            
+            .price-note p {
+                margin: 0;
+                color: #856404;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+
+    <body class="index-page">
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/916374258136" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <h3>KCC</h3>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="#hero" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="booking.html" class="book-btn" style="padding: 8px 20px; font-size: 14px;">Book Now</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+                <a class="btn-getstarted" href="booking.html">Book Appointment</a>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Hero Section -->
+            <section id="hero" class="hero section dark-background">
+                <img src="assets/img/Back.jpg" alt="" data-aos="fade-in" />
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Krishnan Computer Care</h2>
+                            <p data-aos="fade-up" data-aos-delay="200">Professional laptop repair, PC cleaning, and printer services. Transparent pricing and quality service guaranteed.</p>
+                            <div data-aos="fade-up" data-aos-delay="300" style="margin-top: 30px;">
+                                <a href="booking.html" class="book-btn" style="font-size: 16px; padding: 15px 40px;">
+                                    <i class="bi bi-calendar-check"></i> Book Appointment Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clients Section -->
+            <section id="clients" class="clients section">
+                <div class="container" data-aos="fade-up">
+                    <div class="row gy-4">
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/las.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/Mahindra.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/Hyundai.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/Tata.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/s.png" class="img-fluid" alt="" />
+                        </div>
+                        <div class="col-xl-2 col-md-3 col-6 client-logo">
+                            <img src="assets/img/clients/m.png" class="img-fluid" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about section light-background">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row align-items-xl-center gy-5">
+                        <div class="col-xl-5 content">
+                            <h3>About Us</h3>
+                            <h2>Krishnan Computer Care</h2>
+                            <p>We specialize in comprehensive laptop repair, PC cleaning, and printer services. From hardware failures to software issues, we restore your devices to optimal performance with transparent pricing.</p>
+                            <a href="#pricing" class="read-more"><span>View Pricing</span><i class="bi bi-arrow-right"></i></a>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <div class="row gy-4 icon-boxes">
+                                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="icon-box">
+                                        <i class="bi bi-laptop"></i>
+                                        <h3>Laptop Services</h3>
+                                        <p>Complete laptop repair solutions including screen replacement, keyboard repair, battery replacement, and hardware upgrades.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="icon-box">
+                                        <i class="bi bi-pc-display"></i>
+                                        <h3>PC Cleaning</h3>
+                                        <p>Professional deep cleaning services for desktop computers, removing dust and debris for optimal cooling.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="icon-box">
+                                        <i class="bi bi-printer"></i>
+                                        <h3>Printer Services</h3>
+                                        <p>Printer repair, maintenance, cartridge replacement, and troubleshooting for all major brands.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="icon-box">
+                                        <i class="bi bi-cash-coin"></i>
+                                        <h3>Transparent Pricing</h3>
+                                        <p>No hidden charges. View our complete price list before booking your service.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services section">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive laptop, PC, and printer services with competitive pricing and quality guarantee.</p>
+                </div>
+
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-laptop"></i></div>
+                                <div>
+                                    <h4 class="title">Laptop Repair</h4>
+                                    <p class="description">Screen replacement, keyboard repair, battery replacement, motherboard repair, and complete diagnostics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-pc-display"></i></div>
+                                <div>
+                                    <h4 class="title">PC Deep Cleaning</h4>
+                                    <p class="description">Internal cleaning, thermal paste replacement, fan cleaning, and performance optimization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-printer"></i></div>
+                                <div>
+                                    <h4 class="title">Printer Services</h4>
+                                    <p class="description">Printer repair, maintenance, cartridge issues, paper jam fixes, and connectivity problems.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-hdd"></i></div>
+                                <div>
+                                    <h4 class="title">Hardware Upgrades</h4>
+                                    <p class="description">RAM upgrades, SSD installation, hard drive replacement, and component upgrades.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-gear"></i></div>
+                                <div>
+                                    <h4 class="title">Software Solutions</h4>
+                                    <p class="description">OS installation, virus removal, driver updates, and software troubleshooting.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                            <div class="service-item d-flex">
+                                <div class="icon flex-shrink-0"><i class="bi bi-speedometer2"></i></div>
+                                <div>
+                                    <h4 class="title">Performance Boost</h4>
+                                    <p class="description">System optimization, speed enhancement, overheating fixes, and performance tuning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="pricing-section">
+                <div class="container">
+                    <div class="section-title text-center" data-aos="fade-up">
+                        <h2>Our Pricing</h2>
+                        <p>Transparent and competitive pricing for all our services. No hidden charges.</p>
+                    </div>
+
+                    <div class="row">
+                        <!-- Laptop Services Pricing -->
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="pricing-card">
+                                <span class="category-badge">💻 Laptop Services</span>
+                                <h3>Laptop Repair & Maintenance</h3>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Laptop Screen Replacement</span>
+                                    <span class="service-price">₹2,500 - ₹8,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Keyboard Replacement</span>
+                                    <span class="service-price">₹800 - ₹3,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Battery Replacement</span>
+                                    <span class="service-price">₹1,500 - ₹5,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Motherboard Repair</span>
+                                    <span class="service-price">₹2,000 - ₹10,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">RAM Upgrade (4GB/8GB)</span>
+                                    <span class="service-price">₹1,200 - ₹4,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">SSD Installation (128GB-512GB)</span>
+                                    <span class="service-price">₹1,800 - ₹6,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Hard Drive Replacement</span>
+                                    <span class="service-price">₹1,500 - ₹4,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Laptop Hinge Repair</span>
+                                    <span class="service-price">₹500 - ₹2,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Touchpad Replacement</span>
+                                    <span class="service-price">₹800 - ₹2,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Laptop Diagnostics</span>
+                                    <span class="service-price">₹200 - ₹500</span>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <a href="booking.html" class="book-btn">Book Laptop Service</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PC Cleaning Pricing -->
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="pricing-card">
+                                <span class="category-badge">🖥️ PC Cleaning</span>
+                                <h3>PC Deep Cleaning Services</h3>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Basic PC Cleaning (External)</span>
+                                    <span class="service-price">₹300 - ₹500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Deep Internal Cleaning</span>
+                                    <span class="service-price">₹800 - ₹1,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">CPU Fan Cleaning</span>
+                                    <span class="service-price">₹400 - ₹800</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Thermal Paste Replacement</span>
+                                    <span class="service-price">₹500 - ₹1,200</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Motherboard Cleaning</span>
+                                    <span class="service-price">₹600 - ₹1,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Power Supply Cleaning</span>
+                                    <span class="service-price">₹400 - ₹700</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Graphics Card Cleaning</span>
+                                    <span class="service-price">₹500 - ₹1,000</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Complete PC Servicing</span>
+                                    <span class="service-price">₹1,200 - ₹2,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Dust Removal & Optimization</span>
+                                    <span class="service-price">₹600 - ₹1,200</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Cable Management</span>
+                                    <span class="service-price">₹300 - ₹600</span>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <a href="booking.html" class="book-btn">Book PC Cleaning</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Printer Services Pricing -->
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="pricing-card">
+                                <span class="category-badge">🖨️ Printer Services</span>
+                                <h3>Printer Repair & Maintenance</h3>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Printer Diagnostics</span>
+                                    <span class="service-price">₹200 - ₹400</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Cartridge Replacement</span>
+                                    <span class="service-price">₹500 - ₹2,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Paper Jam Fix</span>
+                                    <span class="service-price">₹300 - ₹600</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Print Head Cleaning</span>
+                                    <span class="service-price">₹400 - ₹800</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Printer Roller Replacement</span>
+                                    <span class="service-price">₹600 - ₹1,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Connectivity Issues Fix</span>
+                                    <span class="service-price">₹300 - ₹700</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Printer Driver Installation</span>
+                                    <span class="service-price">₹200 - ₹400</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Scanner Repair</span>
+                                    <span class="service-price">₹500 - ₹1,500</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Printer Cleaning & Servicing</span>
+                                    <span class="service-price">₹400 - ₹900</span>
+                                </div>
+                                
+                                <div class="pricing-item">
+                                    <span class="service-name">Network Printer Setup</span>
+                                    <span class="service-price">₹400 - ₹800</span>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <a href="booking.html" class="book-btn">Book Printer Service</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Note -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="price-note" data-aos="fade-up">
+                                <p><strong>Note:</strong> Prices vary based on device model, brand, and parts required. The ranges shown are indicative. Final pricing will be confirmed after diagnosis. Free pickup and delivery available for repairs above ₹2,000.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="team" class="team section light-background">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Our Team</h2>
+                    <p>Experienced professionals dedicated to providing quality service and customer satisfaction.</p>
+                </div>
+
+                <div class="container">
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info text-center">
+                                <h4>Kannan K</h4>
+                                <span>Chief Technical Engineer</span>
+                                <p>Expert in hardware diagnostics and repair</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info text-center">
+                                <h4>Maha krishnan M</h4>
+                                <span>Service Manager</span>
+                                <p>Specialist in customer service and operations</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member-img">
+                                <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info text-center">
+                                <h4>Balakrishnan S</h4>
+                                <span>Business and Technical Lead</span>
+                                <p>Software solutions and business development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch for laptop, PC, and printer services. Book your appointment today!</p>
+                </div>
+
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row gy-4">
+                        <div class="col-lg-6">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="info-item" data-aos="fade" data-aos-delay="200">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <h3>Address</h3>
+                                        <p>Rax Tech International</p>
+                                        <p>Kaleeswari Tower, 5/391, Velachery Main Rd, Medavakkam, Chennai - 600100</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="info-item" data-aos="fade" data-aos-delay="300">
+                                        <i class="bi bi-telephone"></i>
+                                        <h3>Call Us</h3>
+                                        <p>+91 6374258136</p>
+                                        <p>+91 8946029405</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="info-item" data-aos="fade" data-aos-delay="400">
+                                        <i class="bi bi-envelope"></i>
+                                        <h3>Email Us</h3>
+                                        <p>Balakrishnan6918@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="info-item" data-aos="fade" data-aos-delay="500">
+                                        <i class="bi bi-clock"></i>
+                                        <h3>Open Hours</h3>
+                                        <p>Monday - Friday</p>
+                                        <p>9:00 AM - 8:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="text-center mb-3">
+                                <a href="booking.html" class="book-btn" style="font-size: 18px; padding: 15px 40px;">
+                                    <i class="bi bi-whatsapp"></i> Book via WhatsApp
+                                </a>
+                            </div>
+                            <p class="text-center text-muted">Click above to book your service appointment through WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer" class="footer position-relative light-background">
+                <div class="container footer-top">
+                    <div class="row gy-4">
+                        <div class="col-lg-5 col-md-12 footer-about">
+                            <a href="index.html" class="logo d-flex align-items-center">
+                                <span class="sitename">KCC</span>
+                            </a>
+                            <p>Professional laptop repair, PC cleaning, and printer services with transparent pricing and quality guarantee.</p>
+                            <div class="social-links d-flex mt-4">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#pricing">Pricing</a></li>
+                                <li><a href="booking.html">Book Now</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><a href="#pricing">Laptop Repair</a></li>
+                                <li><a href="#pricing">PC Cleaning</a></li>
+                                <li><a href="#pricing">Printer Services</a></li>
+                                <li><a href="#pricing">Hardware Upgrades</a></li>
+                                <li><a href="#pricing">Software Solutions</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                            <h4>Contact</h4>
+                            <p>Rax Tech International</p>
+                            <p>Medavakkam, Chennai - 600100</p>
+                            <p class="mt-3"><strong>Phone:</strong> <span>+91 6374258136</span></p>
+                            <p><strong>Email:</strong> <span>Balakrishnan6918@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container copyright text-center mt-4">
+                    <p>© <span>Copyright</span> <strong class="sitename">Krishnan Computer Care</strong> <span>All Rights Reserved</span></p>
+                    <div class="credits">
+                        Designed by <a href="#">Balakrishnan S</a>
+                    </div>
+                </div>
+            </footer>
+
+            <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+            <div id="preloader"></div>
+
+            <!-- Vendor JS Files -->
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/vendor/php-email-form/validate.js"></script>
+            <script src="assets/vendor/aos/aos.js"></script>
+            <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+            <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+            <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Main JS File -->
+            <script src="assets/js/main.js"></script>
+        </main>
+    </body>
+</html>
